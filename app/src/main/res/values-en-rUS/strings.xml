@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">taller1jpineda</string>
+    <string name="ancla">Anchor</string>
+    <string name="cuerda">String</string>
+    <string name="cuero">Leather</string>
+    <string name="martillo">Hammer</string>
+    <string name="niquel">Nickel</string>
+    <string name="oro">Gold</string>
+    <string name="oro_rosado">Pink gold</string>
+    <string name="plata">Silver</string>
+</resources>
