@@ -18,4 +18,9 @@
     <string name="dije">Pendant</string>
     <string name="peso">Peso</string>
     <string name="tipo_dije">Pendant kind</string>
+    <string name="error_cantidad">Type the amount</string>
+    <string name="error_seleccionar_dije">Choose the pendant</string>
+    <string name="error_seleccionar_material">Choose the material</string>
+    <string name="error_seleccionar_moneda">Choose the currency</string>
+    <string name="error_seleccionar_tipo">Choose the pendant kind</string>
 </resources>

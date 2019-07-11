@@ -45,14 +45,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void getCost(View v){
-        Material material = (Material) cmbMaterial.getSelectedItem();
-        Dije dije = (Dije) cmbDije.getSelectedItem();
-        TipoDije tipoDije = (TipoDije) cmbTipoDije.getSelectedItem();
-        int moneda = cmbMoneda.getSelectedItemPosition();
+        if(validar()){
+            Material material = (Material) cmbMaterial.getSelectedItem();
+            Dije dije = (Dije) cmbDije.getSelectedItem();
+            TipoDije tipoDije = (TipoDije) cmbTipoDije.getSelectedItem();
+            int moneda = cmbMoneda.getSelectedItemPosition();
 
-        Manilla manilla = config.getManilla(material, dije, tipoDije);
-        Double total = Integer.parseInt(cantidad.getText().toString()) * manilla.getValorByCurrency(moneda);
-        txtResultado.setText(total.toString());
+            Manilla manilla = config.getManilla(material, dije, tipoDije);
+            Double total = Integer.parseInt(cantidad.getText().toString()) * manilla.getValorByCurrency(moneda);
+            txtResultado.setText(total.toString());
+        }
+
 
     }
 
@@ -80,6 +83,16 @@ public class MainActivity extends AppCompatActivity {
         adapterMoneda.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         cmbMoneda.setAdapter(adapterMoneda);
 
+    }
+
+    public boolean validar(){
+        if(cantidad.getText().toString().isEmpty()){
+            cantidad.setError(getResources().getString(R.string.error_cantidad));
+            cantidad.requestFocus();
+            return false;
+        }
+
+        return true;
     }
 
 

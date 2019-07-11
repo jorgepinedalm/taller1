@@ -17,6 +17,11 @@
     <string name="dolar">Dolar</string>
     <string name="peso">Peso</string>
     <string name="obtener_valor">Obtener valor</string>
+    <string name="error_cantidad">Digite la cantidad</string>
+    <string name="error_seleccionar_material">Seleccione el material</string>
+    <string name="error_seleccionar_dije">Seleccione el dije</string>
+    <string name="error_seleccionar_tipo">Seleccione el tipo de dije</string>
+    <string name="error_seleccionar_moneda">Seleccione la moneda</string>
     <string-array name="materiales">
         <item>@string/cuero</item>
         <item>@string/cuerda</item>
