@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -14,13 +15,15 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView txtResultado;
+    private TextView txtResultado;
+    private EditText cantidad;
     private Spinner cmbMaterial;
-    Spinner cmbDije;
-    Spinner cmbTipoDije;
-    Spinner cmbMoneda;
-    String[] materiales, dijes, tiposDije, monedas;
-    ArrayList<Material> material;
+    private Spinner cmbDije;
+    private Spinner cmbTipoDije;
+    private Spinner cmbMoneda;
+    private String[] monedas;
+    private ArrayList<Manilla> manillas;
+    private Config config;
 
 
     @Override
@@ -33,8 +36,11 @@ public class MainActivity extends AppCompatActivity {
         cmbTipoDije = findViewById(R.id.cmbTipoDije);
         cmbMoneda = findViewById(R.id.cmbMoneda);
         txtResultado = findViewById(R.id.txtResultado);
+        cantidad = findViewById(R.id.txtCantidad);
 
-        setAdapters();
+        config = new Config();
+        config.init(this);
+        setData();
 
     }
 
@@ -42,19 +48,19 @@ public class MainActivity extends AppCompatActivity {
         Material material = (Material) cmbMaterial.getSelectedItem();
         Dije dije = (Dije) cmbDije.getSelectedItem();
         TipoDije tipoDije = (TipoDije) cmbTipoDije.getSelectedItem();
-        Integer moneda = cmbMoneda.getSelectedItemPosition();
+        int moneda = cmbMoneda.getSelectedItemPosition();
 
+        Manilla manilla = config.getManilla(material, dije, tipoDije);
+        Double total = Integer.parseInt(cantidad.getText().toString()) * manilla.getValorByCurrency(moneda);
+        txtResultado.setText(total.toString());
 
     }
 
-    private void setAdapters(){
+    private void setData(){
         //Traemos las opciones de un array de Strings
 
         monedas = getResources().getStringArray(R.array.moneda);
 
-        //Inicializamos los objetos
-        Config config = new Config();
-        config.init(this);
 
         //Creamos el adapter indicando donde se va a colocar
         //como se va a visualizar y que se va a mostrar
@@ -74,18 +80,6 @@ public class MainActivity extends AppCompatActivity {
         adapterMoneda.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         cmbMoneda.setAdapter(adapterMoneda);
 
-        /*cmbMaterial.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Material material = (Material) parent.getSelectedItem();
-                txtResultado.setText(material.toString());
-            }
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-
-        });*/
     }
 
 
