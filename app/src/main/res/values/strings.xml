@@ -8,6 +8,13 @@
     <string name="oro_rosado">Oro rosado</string>
     <string name="plata">Plata</string>
     <string name="niquel">Niquel</string>
+    <string name="cantidad">Cantidad</string>
+    <string name="hint_cantidad">Ingrese la cantidad</string>
+    <string name="material">Material</string>
+    <string name="dije">Dije</string>
+    <string name="tipo_dije">Tipo de dije</string>
+    <string name="moneda">Moneda</string>
+    <string name="obtener_valor">Obtener valor</string>
     <string-array name="materiales">
         <item>@string/cuero</item>
         <item>@string/cuerda</item>
