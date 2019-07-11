@@ -75,7 +75,7 @@
             android:text="@string/moneda" />
 
         <Spinner
-            android:id="@+id/cmdMoneda"
+            android:id="@+id/cmbMoneda"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -83,6 +83,7 @@
             android:id="@+id/btnObtenerValor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="getCost"
             android:text="@string/obtener_valor" />
 
         <TextView

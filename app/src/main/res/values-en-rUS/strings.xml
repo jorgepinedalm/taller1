@@ -9,4 +9,13 @@
     <string name="oro">Gold</string>
     <string name="oro_rosado">Pink gold</string>
     <string name="plata">Silver</string>
+    <string name="cantidad">Amount</string>
+    <string name="dolar">Dollar</string>
+    <string name="hint_cantidad">Type the amount</string>
+    <string name="material">Material</string>
+    <string name="obtener_valor">Get cost</string>
+    <string name="moneda">Currency</string>
+    <string name="dije">Pendant</string>
+    <string name="peso">Peso</string>
+    <string name="tipo_dije">Pendant kind</string>
 </resources>
