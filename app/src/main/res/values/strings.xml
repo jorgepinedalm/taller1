@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">taller1jpineda</string>
+    <string name="app_name">Taller 1</string>
     <string name="cuero">Cuero</string>
     <string name="cuerda">Cuerda</string>
     <string name="martillo">Martillo</string>
@@ -8,7 +8,7 @@
     <string name="oro_rosado">Oro rosado</string>
     <string name="plata">Plata</string>
     <string name="niquel">Niquel</string>
-    <string name="cantidad">Cantidad</string>
+    <string name="cantidad">Cantidad de manillas</string>
     <string name="hint_cantidad">Ingrese la cantidad</string>
     <string name="material">Material</string>
     <string name="dije">Dije</string>

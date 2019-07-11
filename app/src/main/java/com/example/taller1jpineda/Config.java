@@ -54,11 +54,11 @@ public class Config {
         m4.setTipo(oro_rosado);
         manillas.add(m4);
 
-        Manilla m5 = new Manilla(cuero, ancla, 80.0);
+        Manilla m5 = new Manilla(cuero, ancla, 100.0);
         m5.setTipo(plata);
         manillas.add(m5);
 
-        Manilla m6 = new Manilla(cuero, ancla, 70.0);
+        Manilla m6 = new Manilla(cuero, ancla, 90.0);
         m6.setTipo(niquel);
         manillas.add(m6);
 

@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,7 +54,8 @@ public class MainActivity extends AppCompatActivity {
 
             Manilla manilla = config.getManilla(material, dije, tipoDije);
             Double total = Integer.parseInt(cantidad.getText().toString()) * manilla.getValorByCurrency(moneda);
-            txtResultado.setText(total.toString());
+            NumberFormat format = NumberFormat.getCurrencyInstance();
+            txtResultado.setText(format.format(total));
         }
 
 

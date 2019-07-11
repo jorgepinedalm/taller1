@@ -7,11 +7,17 @@
     tools:context=".MainActivity">
 
     <LinearLayout
-        android:layout_width="395dp"
-        android:layout_height="340dp"
+        android:layout_width="396dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="32dp"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/textView2"
@@ -19,7 +25,8 @@
             android:layout_height="wrap_content"
             android:text="@string/app_name"
             android:textAlignment="center"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textView3"
@@ -43,6 +50,7 @@
 
         <Spinner
             android:id="@+id/cmbMaterial"
+            style="@android:style/Widget.Material.Spinner.Underlined"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -54,6 +62,7 @@
 
         <Spinner
             android:id="@+id/cmbDije"
+            style="@android:style/Widget.Material.Spinner.Underlined"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -65,6 +74,7 @@
 
         <Spinner
             android:id="@+id/cmbTipoDije"
+            style="@android:style/Widget.Material.Spinner.Underlined"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -76,6 +86,7 @@
 
         <Spinner
             android:id="@+id/cmbMoneda"
+            style="@android:style/Widget.Material.Spinner.Underlined"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -83,15 +94,18 @@
             android:id="@+id/btnObtenerValor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
             android:onClick="getCost"
-            android:text="@string/obtener_valor" />
+            android:text="@string/obtener_valor"
+            android:textColor="@android:color/background_light" />
 
         <TextView
             android:id="@+id/txtResultado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
