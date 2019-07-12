@@ -1,12 +1,8 @@
 package com.example.taller1jpineda;
 
 import android.content.Context;
-import android.os.AsyncTask;
-
 import java.util.ArrayList;
 import java.util.List;
-
-
 
 public class Config {
 
@@ -17,16 +13,19 @@ public class Config {
 
     public void init(Context ctx){
 
+        //Se crean los materiales dados.
         Material cuerda = new Material(1, ctx.getResources().getString(R.string.cuerda));
         Material cuero = new Material(2, ctx.getResources().getString(R.string.cuero));
         materiales.add(cuerda);
         materiales.add(cuero);
 
+        //Se crean los dijes dados.
         Dije ancla = new Dije(1, ctx.getResources().getString(R.string.ancla));
         Dije martillo = new Dije(2, ctx.getResources().getString(R.string.martillo));
         dijes.add(ancla);
         dijes.add(martillo);
 
+        //Se crean los tipos de dijes dados.
         TipoDije oro = new TipoDije(1, ctx.getResources().getString(R.string.oro));
         TipoDije oro_rosado = new TipoDije(2, ctx.getResources().getString(R.string.oro_rosado));
         TipoDije plata = new TipoDije(3, ctx.getResources().getString(R.string.plata));
@@ -36,6 +35,7 @@ public class Config {
         tiposDije.add(plata);
         tiposDije.add(niquel);
 
+        //Se crean las manillas dadas en el documento del taller.
         Manilla m1 = new Manilla(cuero, martillo, 100.0);
         m1.setTipo(oro);
         m1.setTipo(oro_rosado);
@@ -103,7 +103,7 @@ public class Config {
     }
 
     public Manilla getManilla(Material material, Dije dije, TipoDije tipoDije){
-
+        //Se retorna la manilla que coincida con el material, dije y tipo de dije seleccionado por el usuario.
         for(int i = 0 ; i < manillas.size(); i++){
             if(manillas.get(i).getMaterial() == material && manillas.get(i).getDije() == dije && manillas.get(i).getTipos().contains(tipoDije)){
                 return manillas.get(i);

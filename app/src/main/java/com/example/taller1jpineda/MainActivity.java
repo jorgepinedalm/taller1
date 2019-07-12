@@ -4,15 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.text.NumberFormat;
-import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
     private Spinner cmbTipoDije;
     private Spinner cmbMoneda;
     private String[] monedas;
-    private ArrayList<Manilla> manillas;
     private Config config;
 
 
@@ -39,21 +35,28 @@ public class MainActivity extends AppCompatActivity {
         txtResultado = findViewById(R.id.txtResultado);
         cantidad = findViewById(R.id.txtCantidad);
 
+        //Se creó una clase para recrear y relacionar los datos y el valor dado en el documento del taller.
         config = new Config();
+        //Se pasa el contexto de la actividad para poder acceder a los recursos strings
         config.init(this);
+        //Se crear los adapters y se relaciona los datos con los componentes de la actividad
         setData();
 
     }
 
     public void getCost(View v){
         if(validar()){
+            //Se obtienen los datos ingresados
             Material material = (Material) cmbMaterial.getSelectedItem();
             Dije dije = (Dije) cmbDije.getSelectedItem();
             TipoDije tipoDije = (TipoDije) cmbTipoDije.getSelectedItem();
             int moneda = cmbMoneda.getSelectedItemPosition();
 
+            //Se obtiene la manilla que coincida con los datos capturados
             Manilla manilla = config.getManilla(material, dije, tipoDije);
             Double total = Integer.parseInt(cantidad.getText().toString()) * manilla.getValorByCurrency(moneda);
+
+            //Se muestra el valor de la manilla seleccionada en formato moneda.
             NumberFormat format = NumberFormat.getCurrencyInstance();
             txtResultado.setText(format.format(total));
         }
@@ -63,9 +66,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void setData(){
         //Traemos las opciones de un array de Strings
-
         monedas = getResources().getStringArray(R.array.moneda);
-
 
         //Creamos el adapter indicando donde se va a colocar
         //como se va a visualizar y que se va a mostrar
@@ -88,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public boolean validar(){
+        //Se valida que la cantidad de manillas haya sido ingresado.
         if(cantidad.getText().toString().isEmpty()){
             cantidad.setError(getResources().getString(R.string.error_cantidad));
             cantidad.requestFocus();

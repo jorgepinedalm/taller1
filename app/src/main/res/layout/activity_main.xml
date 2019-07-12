@@ -52,7 +52,9 @@
             android:id="@+id/cmbMaterial"
             style="@android:style/Widget.Material.Spinner.Underlined"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:spinnerMode="dropdown"
+            android:touchscreenBlocksFocus="false" />
 
         <TextView
             android:id="@+id/textView5"

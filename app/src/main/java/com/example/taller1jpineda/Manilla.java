@@ -7,24 +7,13 @@ public class Manilla {
     private Dije dije;
     private ArrayList<TipoDije> tipos;
     private double valor;
-    private static final int DOLLAR = 3200;
-
-    public Manilla(){
-        tipos = new ArrayList<>();
-    }
+    private static final double DOLLAR = 3200;
 
     public Manilla(Material material, Dije dije, double valor) {
         this.material = material;
         this.dije = dije;
         this.valor = valor;
         this.tipos = new ArrayList<>();
-    }
-
-    public Manilla(Material material, Dije dije, ArrayList<TipoDije> tipos, Double valor) {
-        this.material = material;
-        this.dije = dije;
-        this.tipos = tipos;
-        this.valor = valor;
     }
 
     public void setTipo(TipoDije tipo) {
@@ -76,7 +65,4 @@ public class Manilla {
         return tipos;
     }
 
-    public boolean contains(TipoDije tipo){
-        return this.tipos.contains(tipo);
-    }
 }
