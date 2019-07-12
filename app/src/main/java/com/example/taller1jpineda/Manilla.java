@@ -45,11 +45,11 @@ public class Manilla {
         switch (posCurrency){
             case 0:
                 //dolar
-                valor = this.valor * DOLLAR;
+                valor = this.valor;
                 break;
             case 1:
                 //peso
-                valor = this.valor;
+                valor = this.valor * DOLLAR;
                 break;
             default:
                 valor = this.valor;
